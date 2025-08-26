@@ -1,0 +1,170 @@
+# 发布工作流 - 自动构建和发布
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'  # 当推送版本标签时触发，如 v1.0.0
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  # 创建 GitHub Release
+  create-release:
+    runs-on: ubuntu-latest
+    outputs:
+      upload_url: ${{ steps.create_release.outputs.upload_url }}
+      release_id: ${{ steps.create_release.outputs.id }}
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Get version from tag
+      id: get_version
+      run: echo "VERSION=${GITHUB_REF/refs\/tags\//}" >> $GITHUB_OUTPUT
+
+    - name: Generate changelog
+      id: changelog
+      run: |
+        # 获取最新的两个标签之间的提交
+        PREV_TAG=$(git describe --tags --abbrev=0 HEAD~1 2>/dev/null || echo "")
+        if [ -z "$PREV_TAG" ]; then
+          CHANGELOG=$(git log --pretty=format:"- %s" --since="30 days ago")
+        else
+          CHANGELOG=$(git log --pretty=format:"- %s" $PREV_TAG..HEAD)
+        fi
+        echo "CHANGELOG<<EOF" >> $GITHUB_OUTPUT
+        echo "$CHANGELOG" >> $GITHUB_OUTPUT
+        echo "EOF" >> $GITHUB_OUTPUT
+
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ steps.get_version.outputs.VERSION }}
+        release_name: Release ${{ steps.get_version.outputs.VERSION }}
+        body: |
+          ## 🚀 新版本发布 ${{ steps.get_version.outputs.VERSION }}
+
+          ### 📝 更新日志
+          ${{ steps.changelog.outputs.CHANGELOG }}
+
+          ### 📦 下载
+          - **Windows**: `Leizi-Terminal-Setup-${{ steps.get_version.outputs.VERSION }}.exe`
+          - **macOS**: `Leizi-Terminal-${{ steps.get_version.outputs.VERSION }}.dmg`
+          - **Linux**: `Leizi-Terminal-${{ steps.get_version.outputs.VERSION }}.AppImage`
+
+          ### 🛠️ 系统要求
+          - Windows 10 或更高版本
+          - macOS 10.15 或更高版本
+          - Ubuntu 18.04 或更高版本
+
+          感谢所有贡献者！🎉
+        draft: false
+        prerelease: false
+
+  # 构建跨平台应用
+  build:
+    needs: create-release
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            platform: linux
+            arch: x64
+          - os: windows-latest
+            platform: win32
+            arch: x64
+          - os: macos-latest
+            platform: darwin
+            arch: x64
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+        cache-dependency-path: frontend/package-lock.json
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install Python dependencies
+      run: pip install -r requirements.txt
+
+    - name: Install frontend dependencies
+      working-directory: ./frontend
+      run: npm ci
+
+    - name: Install Linux dependencies
+      if: matrix.os == 'ubuntu-latest'
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libnss3-dev libatk-bridge2.0-dev libdrm2 libxkbcommon-dev libxss1 libasound2-dev
+
+    - name: Build Electron app
+      working-directory: ./frontend
+      run: npm run electron:build
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        CSC_IDENTITY_AUTO_DISCOVERY: false  # 禁用 macOS 代码签名
+
+    - name: Get version
+      id: get_version
+      shell: bash
+      run: echo "VERSION=${GITHUB_REF/refs\/tags\//}" >> $GITHUB_OUTPUT
+
+    # Windows
+    - name: Upload Windows installer
+      if: matrix.os == 'windows-latest'
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ needs.create-release.outputs.upload_url }}
+        asset_path: frontend/dist/Leizi Terminal Setup ${{ steps.get_version.outputs.VERSION }}.exe
+        asset_name: Leizi-Terminal-Setup-${{ steps.get_version.outputs.VERSION }}.exe
+        asset_content_type: application/octet-stream
+
+    # macOS
+    - name: Upload macOS DMG
+      if: matrix.os == 'macos-latest'
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ needs.create-release.outputs.upload_url }}
+        asset_path: frontend/dist/Leizi Terminal-${{ steps.get_version.outputs.VERSION }}.dmg
+        asset_name: Leizi-Terminal-${{ steps.get_version.outputs.VERSION }}.dmg
+        asset_content_type: application/octet-stream
+
+    # Linux
+    - name: Upload Linux AppImage
+      if: matrix.os == 'ubuntu-latest'
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ needs.create-release.outputs.upload_url }}
+        asset_path: frontend/dist/Leizi Terminal-${{ steps.get_version.outputs.VERSION }}.AppImage
+        asset_name: Leizi-Terminal-${{ steps.get_version.outputs.VERSION }}.AppImage
+        asset_content_type: application/octet-stream
+
+  # 发布后通知
+  notify:
+    needs: [create-release, build]
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+    - name: Release notification
+      run: |
+        echo "🎉 Release completed!"
+        echo "Release URL: https://github.com/${{ github.repository }}/releases/tag/${GITHUB_REF/refs\/tags\//}"
