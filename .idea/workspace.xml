@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78d483ea-3ca6-441d-a359-65eee1e0fda5" name="更改" comment="feat: add initial changelog and enhance documentation for backend and frontend components">
+    <list default="true" id="78d483ea-3ca6-441d-a359-65eee1e0fda5" name="更改" comment="feat: add CODEOWNERS file and update package.json and README for author and repository details">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +78,7 @@
       <workItem from="1756112309750" duration="345000" />
       <workItem from="1756128902004" duration="10026000" />
       <workItem from="1756190214815" duration="105000" />
+      <workItem from="1756191270254" duration="2827000" />
     </task>
     <task id="LOCAL-00001" summary="feat: initialize project structure with React, TypeScript, and Electron">
       <option name="closed" value="true" />
@@ -94,7 +96,23 @@
       <option name="project" value="LOCAL" />
       <updated>1756189413744</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: update .gitignore, add CI and release workflows, and configure testing setup">
+      <option name="closed" value="true" />
+      <created>1756191443505</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1756191443505</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: add CODEOWNERS file and update package.json and README for author and repository details">
+      <option name="closed" value="true" />
+      <created>1756191598166</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1756191598166</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,6 +137,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: initialize project structure with React, TypeScript, and Electron" />
     <MESSAGE value="feat: add initial changelog and enhance documentation for backend and frontend components" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add initial changelog and enhance documentation for backend and frontend components" />
+    <MESSAGE value="feat: update .gitignore, add CI and release workflows, and configure testing setup" />
+    <MESSAGE value="feat: add CODEOWNERS file and update package.json and README for author and repository details" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add CODEOWNERS file and update package.json and README for author and repository details" />
   </component>
 </project>
