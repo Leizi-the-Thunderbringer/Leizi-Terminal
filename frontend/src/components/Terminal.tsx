@@ -1,3 +1,24 @@
+/**
+ * Terminal 组件
+ *
+ * 基于 xterm.js 实现的终端组件，支持 SSH、Telnet 和串口连接。
+ * 提供实时数据传输和自适应窗口大小功能。
+ *
+ * @example
+ * ```tsx
+ * <Terminal
+ *   sessionId="ssh-1"
+ *   type="ssh"
+ *   config={{
+ *     host: "example.com",
+ *     port: 22,
+ *     username: "user",
+ *     password: "pass"
+ *   }}
+ * />
+ * ```
+ */
+
 import React, { useEffect, useRef } from 'react';
 import { Terminal as XTerm } from '@xterm/xterm';
 import { FitAddon } from '@xterm/addon-fit';

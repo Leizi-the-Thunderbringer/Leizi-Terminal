@@ -1,3 +1,20 @@
+/**
+ * MainLayout 组件
+ *
+ * 应用程序的主布局组件，实现了Material Design 3风格的界面。
+ * 提供以下功能：
+ * - 多标签终端管理
+ * - 可折叠侧边栏
+ * - 新建会话对话框
+ * - SFTP文件管理入口
+ * - 配置和快捷方式管理
+ *
+ * @example
+ * ```tsx
+ * <MainLayout />
+ * ```
+ */
+
 import React, { useState } from 'react';
 import {
     Box,
