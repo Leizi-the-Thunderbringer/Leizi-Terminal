@@ -17,6 +17,7 @@ Leizi Terminal Backend Server
     - telnetlib3 (Telnet)
     - pyserial (串口)
 """
+# pylint: disable=missing-function-docstring,missing-class-docstring,too-many-arguments,too-many-locals,unused-argument
 
 import asyncio
 import json
