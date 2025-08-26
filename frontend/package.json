@@ -34,7 +34,11 @@
     "electron:dev": "npm run electron:compile && cross-env NODE_ENV=development DEBUG=true concurrently \"npm run start\" \"npx electron .\"",
     "electron:build": "npm run build && electron-builder",
     "clean": "rimraf dist dist-electron",
-    "postinstall": "electron-builder install-app-deps"
+    "postinstall": "electron-builder install-app-deps",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --ext ts,tsx --fix"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -49,6 +53,8 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.1.2",
+    "@testing-library/react": "^14.0.0",
     "@types/node": "^18.15.11",
     "@types/react": "^18.2.18",
     "@types/react-dom": "^18.2.7",
@@ -57,23 +63,38 @@
     "cross-env": "^7.0.3",
     "electron": "^25.3.2",
     "electron-builder": "^24.6.3",
+    "jsdom": "^22.1.0",
     "rimraf": "^5.0.10",
     "typescript": "^5.0.2",
     "vite": "^4.4.9",
-    "wait-on": "^7.2.0"
+    "wait-on": "^7.2.0",
+    "vitest": "^0.34.3"
   },
   "build": {
-    "appId": "com.leizi.terminal",
-    "mac": {
-      "category": "public.app-category.developer-tools"
+    "appId": "com.leiziterminal.app",
+    "directories": {
+      "output": "dist"
     },
     "files": [
       "dist/**/*",
-      "electron/**/*"
+      "dist-electron/**/*"
     ],
-    "directories": {
-      "buildResources": "assets",
-      "output": "release"
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "target": [
+        "dmg"
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "category": "Development"
     }
   }
 }
