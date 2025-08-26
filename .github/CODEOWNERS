@@ -1,0 +1,12 @@
+# 这个文件定义了代码的默认审查者
+# 更多信息：https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# 默认所有者
+*       @Leizi-the-Thunderbringer
+
+# 前端代码
+/frontend/  @Leizi-the-Thunderbringer
+
+# Python 后端
+*.py    @Leizi-the-Thunderbringer
+/requirements.txt  @Leizi-the-Thunderbringer

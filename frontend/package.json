@@ -3,15 +3,15 @@
   "private": true,
   "version": "0.1.0",
   "description": "A modern terminal tool supporting SSH, Telnet, and Serial connections",
-  "author": "Your Name",
+  "author": "Leizi-the-Thunderbringer",
   "license": "MIT",
-  "homepage": "https://github.com/yourusername/leizi-terminal#readme",
+  "homepage": "https://github.com/Leizi-the-Thunderbringer/Leizi-Terminal#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/leizi-terminal.git"
+    "url": "git+https://github.com/Leizi-the-Thunderbringer/Leizi-Terminal.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/leizi-terminal/issues"
+    "url": "https://github.com/Leizi-the-Thunderbringer/Leizi-Terminal/issues"
   },
   "keywords": [
     "terminal",
