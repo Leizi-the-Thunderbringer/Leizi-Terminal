@@ -1,4 +1,10 @@
 # 发布工作流 - 自动构建和发布
+# !!! 临时禁用 !!!
+# 原因：Token权限问题 #2
+# 预计恢复：2025-09
+# jobs:
+#   release:
+#     if: false
 name: Release
 
 on:

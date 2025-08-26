@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78d483ea-3ca6-441d-a359-65eee1e0fda5" name="更改" comment="feat: disable pylint warnings for missing docstrings and complexity in main.py">
+    <list default="true" id="78d483ea-3ca6-441d-a359-65eee1e0fda5" name="更改" comment="feat: update release.yml permissions and modify workspace.xml for task tracking">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/release.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/release.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,7 +82,7 @@
       <workItem from="1756194154772" duration="414000" />
       <workItem from="1756194583507" duration="100000" />
       <workItem from="1756194840511" duration="849000" />
-      <workItem from="1756199054945" duration="1661000" />
+      <workItem from="1756199054945" duration="2851000" />
     </task>
     <task id="LOCAL-00001" summary="feat: initialize project structure with React, TypeScript, and Electron">
       <option name="closed" value="true" />
@@ -147,7 +148,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756199663227</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="feat: update release.yml permissions and modify workspace.xml for task tracking">
+      <option name="closed" value="true" />
+      <created>1756202960889</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1756202960889</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,6 +186,7 @@
     <MESSAGE value="feat: update workspace.xml to reflect recent task changes and commit messages" />
     <MESSAGE value="feat: add CI and release workflows for automated testing and deployment" />
     <MESSAGE value="feat: disable pylint warnings for missing docstrings and complexity in main.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: disable pylint warnings for missing docstrings and complexity in main.py" />
+    <MESSAGE value="feat: update release.yml permissions and modify workspace.xml for task tracking" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: update release.yml permissions and modify workspace.xml for task tracking" />
   </component>
 </project>
