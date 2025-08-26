@@ -1,0 +1,24 @@
+# 基础依赖
+react
+react-dom
+@types/react
+@types/react-dom
+typescript
+vite
+@vitejs/plugin-react
+
+# Material UI
+@mui/material
+@emotion/react
+@emotion/styled
+@mui/icons-material
+
+# 终端相关
+@xterm/xterm
+@xterm/addon-fit
+@xterm/addon-web-links
+
+# Electron相关
+electron
+electron-builder
+electron-is-dev
