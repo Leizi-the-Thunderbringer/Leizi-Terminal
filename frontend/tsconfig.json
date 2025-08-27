@@ -20,6 +20,6 @@
     "allowSyntheticDefaultImports": true,
     "types": ["node", "vite/client"]
   },
-  "include": ["src", "electron"],
+  "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
