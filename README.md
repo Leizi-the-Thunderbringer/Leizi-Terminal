@@ -6,6 +6,8 @@
 
 一个现代化的终端工具，支持 SSH/Telnet/串口协议，使用 Electron 和 React 实现 Material Design 3 风格的界面。
 
+🤖 CI/CD Status: Currently celebrating release day in its own way (a.k.a. exploding). PRs to help calm it down are warmly welcomed!
+
 ## 特性
 
 - 🚀 支持 SSH/Telnet/串口协议
@@ -45,7 +47,7 @@ cd Leizi-Terminal
 # 安装 Python 依赖
 pip install -r requirements.txt
 
-# 安装前��依赖
+# 安装前端依赖
 cd frontend
 npm install
 ```

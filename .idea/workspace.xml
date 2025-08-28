@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78d483ea-3ca6-441d-a359-65eee1e0fda5" name="更改" comment="更新了CI，并添加简单的测试（这次应该不会爆炸了吧）">
-      <change afterPath="$PROJECT_DIR$/frontend/src/App.test.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/eslint.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/eslint.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-    </list>
+    <list default="true" id="78d483ea-3ca6-441d-a359-65eee1e0fda5" name="更改" comment="更新了README和依赖项" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,12 +19,12 @@
     &quot;assignee&quot;: &quot;Amiya167&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;git@github.com:Leizi-the-Thunderbringer/Leizi-Terminal.git&quot;,
-    &quot;accountId&quot;: &quot;3d750296-a5b7-421a-97fc-1060868f890d&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Leizi-the-Thunderbringer/Leizi-Terminal.git",
+    "accountId": "3d750296-a5b7-421a-97fc-1060868f890d"
   }
-}</component>
+}]]></component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/.github/workflows/release.yml" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -59,7 +49,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "vcs.Git",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "to.speed.mode.migration.done": "true",
     "ts.external.directory.path": "/Users/logos/Leizi-Terminal/frontend/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
@@ -94,7 +84,9 @@
       <workItem from="1756194840511" duration="849000" />
       <workItem from="1756199054945" duration="2962000" />
       <workItem from="1756276361684" duration="673000" />
-      <workItem from="1756277078663" duration="1422000" />
+      <workItem from="1756277078663" duration="1550000" />
+      <workItem from="1756278761685" duration="2134000" />
+      <workItem from="1756282278134" duration="2845000" />
     </task>
     <task id="LOCAL-00001" summary="feat: initialize project structure with React, TypeScript, and Electron">
       <option name="closed" value="true" />
@@ -176,7 +168,23 @@
       <option name="project" value="LOCAL" />
       <updated>1756204385319</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="更新了CI，并添加简单的测试（这次应该不会爆炸了吧）">
+      <option name="closed" value="true" />
+      <created>1756278655745</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1756278655745</updated>
+    </task>
+    <task id="LOCAL-00012" summary="更新了README和依赖项">
+      <option name="closed" value="true" />
+      <created>1756380522594</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1756380522594</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,6 +217,7 @@
     <MESSAGE value="feat: update release.yml permissions and modify workspace.xml for task tracking" />
     <MESSAGE value="release.yml流程临时禁用，原因：# 原因：Token权限问题 #2" />
     <MESSAGE value="更新了CI，并添加简单的测试（这次应该不会爆炸了吧）" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新了CI，并添加简单的测试（这次应该不会爆炸了吧）" />
+    <MESSAGE value="更新了README和依赖项" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新了README和依赖项" />
   </component>
 </project>
