@@ -5,6 +5,7 @@
 [![GitHub license](https://img.shields.io/github/license/Leizi-the-Thunderbringer/Leizi-Terminal)](https://github.com/Leizi-the-Thunderbringer/Leizi-Terminal/blob/main/LICENSE)
 
 一个现代化的终端工具，支持 SSH/Telnet/串口协议，使用 Electron 和 React 实现 Material Design 3 风格的界面。
+🤖 CI/CD Status: Currently celebrating release day in its own way (a.k.a. exploding). PRs to help calm it down are warmly welcomed!
 
 🤖 CI/CD Status: Currently celebrating release day in its own way (a.k.a. exploding). PRs to help calm it down are warmly welcomed!
 
